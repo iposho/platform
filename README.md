@@ -152,6 +152,8 @@ rushx upgrade -f
 
 ## Troubleshooting
 
+### Failed build
+
 If a build fails, but the code is correct, try to delete the [build cache](https://rushjs.io/pages/maintainer/build_cache/)
 
 ```bash
@@ -160,6 +162,17 @@ rm -rf common/temp/build-cache
 ```
 
 and retry.
+
+### «Server is under maintenance» message
+
+The «Server is under maintenance» message is displayed when the version of the workspace does not match the version of the server.
+
+Inside of ```dev/tool```, run the following command where _ws1_ is your workspace name
+
+```bash
+# inside of dev/tool
+rushx run-local upgrade-workspace ws1
+```
 
 ## Build & Watch
 
